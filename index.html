@@ -3,25 +3,156 @@
 <head>
   <meta charset="utf-8">
   <title>Juergen Mathes - Projects</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 2rem; background: #fafafa; color: #222; }
+    h1 { margin-bottom: 0.5rem; }
+    p  { margin-top: 0; margin-bottom: 2rem; line-height: 1.5; }
+
+    .project-split{
+      display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;
+      background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom:2rem;
+    }
+    .split-left h2{ margin-top:0; }
+    .btn{
+      display:inline-block; margin-top:1rem; padding:0.5rem 0.9rem; border:1px solid #ccc;
+      border-radius:8px; text-decoration:none; color:#222; font-weight:600;
+    }
+    .btn:hover{ background:#f5f5f5; }
+
+    .split-right{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .card{
+      margin:0; border:1px solid #eee; border-radius:8px; overflow:hidden; background:#fff; text-align:center;
+    }
+    .card img{ width:100%; height:auto; display:block; }
+    .card figcaption{ padding:0.5rem 0.75rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
+
+    /* GIF sizing */
+    .gif-img{ width:auto; max-width:100%; max-height:250px; display:inline-block; }
+
+    /* YouTube thumbnail cards */
+    .yt-link{
+      position:relative; display:block; text-decoration:none; color:inherit;
+    }
+    .yt-thumb{ display:block; width:100%; height:auto; }
+    .yt-play{
+      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+      background:rgba(0,0,0,0.6); border-radius:999px; padding:12px 16px;
+      font-weight:700; color:#fff; line-height:1; user-select:none;
+    }
+    .yt-link:hover .yt-play{ background:rgba(0,0,0,0.75); }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .project-split{ grid-template-columns:1fr; }
+      .split-right{ grid-template-columns:1fr; }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Hi, I’m Jürgen 👋</h1>
-    <p>Welcome to my corner of the internet. Here are some of my projects:</p>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr><th>Project</th><th>Description</th></tr>
-        </thead>
-        <tbody id="projects-body">
-        </tbody>
-      </table>
+  <h1>Hi, I’m Jürgen 👋</h1>
+  <p>Welcome to my corner of the internet. Here are some of my projects and media:</p>
+
+  <!-- Project with two GIFs -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>Tiny PathFormer</h2>
+      <p>
+        Lightweight toy project for learning path planning with an autoregressive policy.
+        Trains on synthetic grid mazes and visualizes trajectories.
+      </p>
+      <a class="btn" href="https://github.com/juergenmathes/tiny-pathformer" target="_blank" rel="noopener">View on GitHub</a>
     </div>
-    <footer>
-      <p id="footer-text"></p>
-    </footer>
-  </main>
-  <script src="script.js"></script>
+    <div class="split-right">
+      <figure class="card">
+        <img class="gif-img" src="https://github.com/juergenmathes/tiny-pathformer/raw/main/videos/best_ep40_ok.gif" alt="Tiny PathFormer demo ep40">
+        <figcaption>Autoregressive rollout (ep40)</figcaption>
+      </figure>
+      <figure class="card">
+        <img class="gif-img" src="https://github.com/juergenmathes/tiny-pathformer/raw/main/videos/best_ep56_ok.gif" alt="Tiny PathFormer demo ep56">
+        <figcaption>Autoregressive rollout (ep56)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LineDiffusion / DiffuTraj project -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>LineDiffusion (DiffuTraj)</h2>
+      <p>
+        Minimal diffusion model for 2D trajectories — from pure noise to straight lines with fixed endpoints.  
+        Demonstrates how denoising diffusion can reconstruct trajectories while preserving constraints.  
+        Includes dark-themed MP4/GIF animations visualizing the reverse diffusion process.
+      </p>
+      <a class="btn" href="https://github.com/juergenmathes/LineDiffusion" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+    <div class="split-right">
+      <figure class="card">
+        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" alt="LineDiffusion trajectory sample 00">
+        <figcaption>Reverse diffusion (sample 00)</figcaption>
+      </figure>
+      <figure class="card">
+        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" alt="LineDiffusion trajectory sample 01">
+        <figcaption>Reverse diffusion (sample 01)</figcaption>
+      </figure>
+      <figure class="card">
+        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" alt="LineDiffusion trajectory sample 02">
+        <figcaption>Reverse diffusion (sample 02)</figcaption>
+      </figure>
+      <figure class="card">
+        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" alt="LineDiffusion trajectory sample 03">
+        <figcaption>Reverse diffusion (sample 03)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <!-- Talks & Presentations (clickable thumbnails instead of iframes) -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>Talks & Presentations</h2>
+      <p>Selected recordings (click a thumbnail to watch on YouTube).</p>
+    </div>
+    <div class="split-right">
+      <figure class="card">
+        <a class="yt-link" href="https://youtu.be/SQrVUqhrvII" target="_blank" rel="noopener" aria-label="Watch Talk (2021) on YouTube">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/SQrVUqhrvII/hqdefault.jpg" alt="Talk (2021) thumbnail">
+          <span class="yt-play">▶</span>
+        </a>
+        <figcaption>Talk (2021)</figcaption>
+      </figure>
+
+      <figure class="card">
+        <a class="yt-link" href="https://youtu.be/YJKo_F3uUwU" target="_blank" rel="noopener" aria-label="Watch Talk (2022) on YouTube">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/YJKo_F3uUwU/hqdefault.jpg" alt="Talk (2022) thumbnail">
+          <span class="yt-play">▶</span>
+        </a>
+        <figcaption>Talk (2022)</figcaption>
+      </figure>
+
+      <figure class="card">
+        <a class="yt-link" href="https://youtu.be/DaULLeq_AAU" target="_blank" rel="noopener" aria-label="Watch Project Presentation (2022) on YouTube">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/DaULLeq_AAU/hqdefault.jpg" alt="Project Presentation (2022) thumbnail">
+          <span class="yt-play">▶</span>
+        </a>
+        <figcaption>Project Presentation (2022)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Links & Publications -->
+  <section class="project-split" style="display:block">
+    <h2>Links & Publications</h2>
+    <ul>
+      <li>🔗 <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+      <li>🔗 <a href="https://scholar.google.com/citations?user=6qs34YkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li>📄 <a href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">Scaling Planning for Automated Driving using Simplistic Synthetic Data</a> (2023)</li>
+      <li>📄 <a href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">The WayHome: Long-term Motion Prediction on Dynamically Scaled</a> (2023)</li>
+      <li>💡 <a href="https://patents.google.com/patent/US20250021879A1/en" target="_blank" rel="noopener">Computer-Implemented Method and System for Training a Planning Model</a> (Patent, 2025)</li>
+      <li>💡 <a href="https://patents.google.com/patent/US20240278808A1/en" target="_blank" rel="noopener">Method for Behavior Planning of an Ego Vehicle as Part of a Traffic Scene</a> (Patent, 2024)</li>
+    </ul>
+  </section>
 </body>
 </html>
