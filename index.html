@@ -25,7 +25,17 @@
     .card{
       margin:0; border:1px solid #eee; border-radius:8px; overflow:hidden; background:#fff; text-align:center;
     }
-    .card img{ width:100%; height:auto; display:block; }
+    .card img {
+      width: 100%;
+      height: 220px;        /* or whatever height you prefer */
+      object-fit: contain;  /* preserve ratio, no skew */
+      display: block;
+    }
+    .same-width {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
     .card figcaption{ padding:0.5rem 0.75rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
 
     /* GIF sizing */
@@ -51,13 +61,17 @@
   </style>
 </head>
 <body>
-  <h1>Hi, I’m Jürgen 👋</h1>
-  <p>Welcome to my corner of the internet. Here are some of my projects and media:</p>
+  <h1>Jürgen Mathes</h1>
+  <p>Research Engineer bridging state-of-the-art AI and real-world robotics.</p>
 
-  <!-- Project with two GIFs -->
+
+  <!-- Tiny PathFormer -->
   <section class="project-split">
     <div class="split-left">
       <h2>Tiny PathFormer</h2>
+      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
+        #playground #fundamentals #weekendproject
+      </div>
       <p>
         Lightweight toy project for learning path planning with an autoregressive policy.
         Trains on synthetic grid mazes and visualizes trajectories.
@@ -76,10 +90,15 @@
     </div>
   </section>
 
-  <!-- LineDiffusion / DiffuTraj project -->
+
+
+  <!-- LineDiffusion / DiffuTraj -->
   <section class="project-split">
     <div class="split-left">
       <h2>LineDiffusion (DiffuTraj)</h2>
+      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
+        #weekendproject #fundamentals
+      </div>
       <p>
         Minimal diffusion model for 2D trajectories - from pure noise to straight lines with fixed endpoints.  
         Demonstrates how denoising diffusion can reconstruct trajectories while preserving constraints.  
@@ -108,10 +127,14 @@
   </section>
 
 
+
   <!-- S3DPPS Project -->
   <section class="project-split">
     <div class="split-left">
       <h2>S3DPPS (3D Pick and Place)</h2>
+      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
+        #weekendproject
+      </div>
       <p>
         A straightforward yet powerful approach to <strong>3D bounding box prediction</strong>.  
         Starting with pre-segmented object point clouds, our two-stage transformer setup 
@@ -140,50 +163,169 @@
 
 
 
-  <!-- Talks & Presentations (clickable thumbnails instead of iframes) -->
+  <!-- Video Section: M3DETR -->
   <section class="project-split">
     <div class="split-left">
-      <h2>Talks & Presentations</h2>
-      <p>Selected recordings (click a thumbnail to watch on YouTube).</p>
+      <h2>M3DETR: Multi-representation Multi-scale Transformers for 3D Object Detection</h2>
+      <p>
+        Combines raw, voxel, and bird’s-eye-view point cloud representations with multi-scale feature pyramids.  
+        M3DETR unifies multiple representations and scales while modeling relationships between point clouds using transformers.  
+        Achieves state-of-the-art results on KITTI and Waymo benchmarks.  
+        <br><br>
+        <strong>Sources:</strong> 
+        <a href="https://arxiv.org/abs/2104.11896" target="_blank" rel="noopener">[2104.11896]</a>, 
+        <a href="https://arxiv.org/abs/1912.13192" target="_blank" rel="noopener">[1912.13192]</a>
+        <br>
+        <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
+      </p>
     </div>
     <div class="split-right">
       <figure class="card">
-        <a class="yt-link" href="https://youtu.be/SQrVUqhrvII" target="_blank" rel="noopener" aria-label="Watch Talk (2021) on YouTube">
-          <img class="yt-thumb" src="https://img.youtube.com/vi/SQrVUqhrvII/hqdefault.jpg" alt="Talk (2021) thumbnail">
+        <a class="yt-link" href="https://www.youtube.com/watch?v=SQrVUqhrvII" target="_blank" rel="noopener" aria-label="Watch M3DETR video">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/SQrVUqhrvII/hqdefault.jpg" alt="M3DETR video thumbnail">
           <span class="yt-play">▶</span>
         </a>
-        <figcaption>Talk (2021)</figcaption>
-      </figure>
-
-      <figure class="card">
-        <a class="yt-link" href="https://youtu.be/YJKo_F3uUwU" target="_blank" rel="noopener" aria-label="Watch Talk (2022) on YouTube">
-          <img class="yt-thumb" src="https://img.youtube.com/vi/YJKo_F3uUwU/hqdefault.jpg" alt="Talk (2022) thumbnail">
-          <span class="yt-play">▶</span>
-        </a>
-        <figcaption>Talk (2022)</figcaption>
-      </figure>
-
-      <figure class="card">
-        <a class="yt-link" href="https://youtu.be/DaULLeq_AAU" target="_blank" rel="noopener" aria-label="Watch Project Presentation (2022) on YouTube">
-          <img class="yt-thumb" src="https://img.youtube.com/vi/DaULLeq_AAU/hqdefault.jpg" alt="Project Presentation (2022) thumbnail">
-          <span class="yt-play">▶</span>
-        </a>
-        <figcaption>Project Presentation (2022)</figcaption>
+        <figcaption>M3DETR video explanation</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- Links & Publications -->
+
+  <!-- Video Section: Scene Transformer -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>Scene Transformer: Unified Architecture for Multi-Agent Trajectory Prediction</h2>
+      <p>
+        Predicts the motion of all agents jointly, producing consistent futures that account for interactions.  
+        Inspired by language models with masking strategies for flexible conditioning.  
+        Achieves state-of-the-art results on popular autonomous driving datasets.  
+        <br><br>
+        <strong>Source:</strong> 
+        <a href="https://arxiv.org/abs/2106.08417" target="_blank" rel="noopener">[2106.08417]</a>  
+        <br>
+        <strong>Tags:</strong> #machinelearning #transformers #prediction #planning
+      </p>
+    </div>
+    <div class="split-right">
+      <figure class="card">
+        <a class="yt-link" href="https://www.youtube.com/watch?v=YJKo_F3uUwU" target="_blank" rel="noopener" aria-label="Watch Scene Transformer video">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/YJKo_F3uUwU/hqdefault.jpg" alt="Scene Transformer video thumbnail">
+          <span class="yt-play">▶</span>
+        </a>
+        <figcaption>Scene Transformer paper explained</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- Video Section: End-to-End Video Object Detection -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>End-to-End Video Object Detection with Spatial-Temporal Transformers</h2>
+      <p>
+        Builds on DETR by introducing Deformable DETR to improve convergence and small-object detection.  
+        Uses spatial-temporal transformers for video object detection.  
+        Achieves higher performance with 10× fewer epochs.  
+        <br><br>
+        <strong>Sources:</strong> 
+        <a href="https://arxiv.org/abs/2105.10920" target="_blank" rel="noopener">[2105.10920]</a>, 
+        <a href="https://arxiv.org/abs/2005.12872" target="_blank" rel="noopener">[2005.12872]</a>, 
+        <a href="https://arxiv.org/abs/2010.04159" target="_blank" rel="noopener">[2010.04159]</a>  
+        <br>
+        <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
+      </p>
+    </div>
+    <div class="split-right">
+      <figure class="card">
+        <a class="yt-link" href="https://www.youtube.com/watch?v=DaULLeq_AAU" target="_blank" rel="noopener" aria-label="Watch End-to-End Object Detection video">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/DaULLeq_AAU/hqdefault.jpg" alt="End-to-End Object Detection thumbnail">
+          <span class="yt-play">▶</span>
+        </a>
+        <figcaption>Deformable DETR & Video Object Detection</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+    <!-- The WayHome Paper -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>The WayHome: Long-term Motion Prediction on Dynamically Scaled Grids</h2>
+      <p>
+        We develop a novel motion forecasting approach for autonomous vehicles, predicting multiple heatmaps for every nearby traffic participant—one per timestep.  
+        A sampling algorithm extracts the most likely coordinates, while a new grid-scaling technique further improves accuracy.  
+        Our method reduces miss rates at 3s horizons and remains competitive at longer horizons (up to 8s) on the Waymo Motion Challenge.
+      </p>
+      <a class="btn" href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">Read on arXiv</a>
+    </div>
+    <div class="split-right">
+      <figure class="card">
+        <img class="gif-img same-width" src="artifacts/2023_wayhome_01.png" alt="WayHome artifact 1">
+        <figcaption>
+          Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.
+        </figcaption>
+      </figure>
+      <figure class="card">
+        <img class="gif-img same-width" src="artifacts/2023_wayhome_02.png" alt="WayHome artifact 2">
+        <figcaption>
+          Fig. 2: Neural network model with encoders, decoders, and grid-scaling technique.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- Scaling Planning Paper -->
+  <section class="project-split">
+    <div class="split-left">
+      <h2>Scaling Planning for Automated Driving using Simplistic Synthetic Data</h2>
+      <p>
+        We challenge the view that deep learning for driving plans needs massive real-world datasets or highly realistic simulations.  
+        With lightweight synthetic roundabout scenarios and behavioural cloning, we achieve reliable and comfortable driving in a real vehicle, while addressing sim-to-real gaps through targeted augmentation and scenario variations.
+      </p>
+      <a class="btn" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">Read on arXiv</a>
+    </div>
+    <div class="split-right">
+      <figure class="card">
+        <img class="gif-img" src="artifacts/2023_scaling_imitation_01.png" alt="Scaling Planning artifact 1">
+        <figcaption>
+          Fig. 1: Alternating steps of our iterative development cycle:  
+          train and optimise planner with simplistic simulation (left),  
+          observe sim-to-real gap in on-road test and extend simulator (right).
+        </figcaption>
+      </figure>
+      <figure class="card">
+        <img class="gif-img" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2">
+        <figcaption>
+          Fig. 2: Model architecture consisting of a CNN backbone,  
+          a waypoints head, and a prediction head that generates the  
+          auxiliary prediction output.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- Patents & Links -->
   <section class="project-split" style="display:block">
-    <h2>Links & Publications</h2>
-    <ul>
-      <li>🔗 <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-      <li>🔗 <a href="https://scholar.google.com/citations?user=6qs34YkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a></li>
-      <li>📄 <a href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">Scaling Planning for Automated Driving using Simplistic Synthetic Data</a> (2023)</li>
-      <li>📄 <a href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">The WayHome: Long-term Motion Prediction on Dynamically Scaled</a> (2023)</li>
-      <li>💡 <a href="https://patents.google.com/patent/US20250021879A1/en" target="_blank" rel="noopener">Computer-Implemented Method and System for Training a Planning Model</a> (Patent, 2025)</li>
-      <li>💡 <a href="https://patents.google.com/patent/US20240278808A1/en" target="_blank" rel="noopener">Method for Behavior Planning of an Ego Vehicle as Part of a Traffic Scene</a> (Patent, 2024)</li>
+    <h2>Patents</h2>
+    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+      <li>💡 <a href="https://patents.google.com/patent/US20250021879A1/en" target="_blank" rel="noopener">
+        <strong>Computer-Implemented Method and System for Training a Planning Model</strong></a> (2025)</li>
+      <li>💡 <a href="https://patents.google.com/patent/US20240278808A1/en" target="_blank" rel="noopener">
+        <strong>Method for Behavior Planning of an Ego Vehicle as Part of a Traffic Scene</strong></a> (2024)</li>
+    </ul>
+
+    <h2 style="margin-top:1.5rem;">Links</h2>
+    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+      <li>🔗 <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">
+        LinkedIn – professional profile</a></li>
+      <li>🔗 <a href="https://scholar.google.com/citations?user=6qs34YkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
+        Google Scholar – list of publications</a></li>
     </ul>
   </section>
+
+
 </body>
 </html>
