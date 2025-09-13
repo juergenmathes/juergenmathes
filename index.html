@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="canonical" href="https://juergenmathes.github.io/juergenmathes/" />
+  <link rel="icon" href="https://github.com/juergenmathes.png?size=64" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Jürgen Mathes – Projects & Publications" />
@@ -23,18 +24,61 @@
   <meta name="twitter:description" content="Research Engineer bridging state-of-the-art AI and real-world robotics. Explore projects, publications, and patents." />
   <meta name="twitter:image" content="https://juergenmathes.github.io/juergenmathes/artifacts/2023_wayhome_01.png" />
 
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jürgen Mathes",
+    "url": "https://juergenmathes.github.io/juergenmathes/",
+    "jobTitle": "Research Engineer – Planning & Robotics",
+    "image": "https://github.com/juergenmathes.png?size=400",
+    "sameAs": [
+      "https://github.com/juergenmathes",
+      "https://www.linkedin.com/in/juergen-mathes-44b389131/",
+      "https://scholar.google.com/citations?user=6qs34YkAAAAJ"
+    ]
+  }
+  </script>
 
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 2rem; background: #fafafa; color: #222; }
-    h1 { margin-bottom: 0.5rem; }
-    p  { margin-top: 0; margin-bottom: 2rem; line-height: 1.5; }
+    :root{
+      --bg:#fafafa; --fg:#222; --muted:#666; --card:#fff; --border:#eee; --chip:#f1f1f1; --brand:#0a66c2;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; margin: 0; background: var(--bg); color: var(--fg); }
+    a { color: var(--fg); }
 
+    /* Layout */
+    .container{ max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    header { display:flex; align-items:center; gap:1.25rem; padding-top: 1rem; padding-bottom: 1rem; }
+    header img { width:88px; height:88px; border-radius:50%; border:1px solid var(--border); }
+    .title-wrap h1{ margin:0; font-size:1.8rem; }
+    .subtitle{ margin:0.25rem 0 0; color:var(--muted); }
+    .tagline{ margin-top:0.4rem; font-weight:600; }
+
+    nav { margin-top:0.5rem; }
+    .nav a{ display:inline-block; margin-right:0.6rem; padding:0.35rem 0.7rem; border:1px solid #ccc; border-radius:999px; font-size:0.9rem; text-decoration:none; }
+    .nav a:hover{ background:#f5f5f5; }
+
+    .chips{ display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem; }
+    .chip{ background:var(--chip); border:1px solid var(--border); padding:0.25rem 0.55rem; border-radius:999px; font-size:0.85rem; }
+    .chip a{ text-decoration:none; }
+
+    section{ margin-top: 2rem; }
+    .section-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; }
+
+    h2{ margin:0 0 0.75rem; font-size:1.25rem; }
+    p  { margin-top: 0; line-height: 1.6; }
+    ul { margin: 0.25rem 0 0.75rem 1.2rem; }
+
+    /* Shared project styles from your original */
     .project-split{
       display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;
       background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      margin-bottom:2rem;
+      margin-bottom:2rem; border:1px solid var(--border);
     }
-    .split-left h2{ margin-top:0; }
+    .split-left h3{ margin-top:0; }
     .btn{
       display:inline-block; margin-top:1rem; padding:0.5rem 0.9rem; border:1px solid #ccc;
       border-radius:8px; text-decoration:none; color:#222; font-weight:600;
@@ -42,340 +86,331 @@
     .btn:hover{ background:#f5f5f5; }
 
     .split-right{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .card{
-      margin:0; border:1px solid #eee; border-radius:8px; overflow:hidden; background:#fff; text-align:center;
-    }
-    .card img {
-      width: 100%;
-      height: 220px;        /* or whatever height you prefer */
-      object-fit: contain;  /* preserve ratio, no skew */
-      display: block;
-    }
-    .same-width {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
+    .card{ margin:0; border:1px solid #eee; border-radius:8px; overflow:hidden; background:#fff; text-align:center; }
+    .card img { width: 100%; height: 220px; object-fit: contain; display: block; }
+    .same-width { width: 100%; height: auto; object-fit: contain; }
     .card figcaption{ padding:0.5rem 0.75rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
-
-    /* GIF sizing */
     .gif-img{ width:auto; max-width:100%; max-height:250px; display:inline-block; }
 
-    /* YouTube thumbnail cards */
-    .yt-link{
-      position:relative; display:block; text-decoration:none; color:inherit;
-    }
+    .yt-link{ position:relative; display:block; text-decoration:none; color:inherit; }
     .yt-thumb{ display:block; width:100%; height:auto; }
-    .yt-play{
-      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-      background:rgba(0,0,0,0.6); border-radius:999px; padding:12px 16px;
-      font-weight:700; color:#fff; line-height:1; user-select:none;
-    }
+    .yt-play{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+      background:rgba(0,0,0,0.6); border-radius:999px; padding:12px 16px; font-weight:700; color:#fff; line-height:1; user-select:none; }
     .yt-link:hover .yt-play{ background:rgba(0,0,0,0.75); }
 
-    /* Responsive */
     @media (max-width:900px){
       .project-split{ grid-template-columns:1fr; }
       .split-right{ grid-template-columns:1fr; }
+      header { align-items:flex-start; }
     }
+
+    footer{ color:var(--muted); font-size:0.9rem; margin-top:2rem; padding-bottom:2rem; }
   </style>
 </head>
-  <h1>Jürgen Mathes</h1>
-  <p>
-    Research Engineer bridging state-of-the-art AI and real-world robotics.<br>
-    <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/details/experience/" 
-       target="_blank" rel="noopener"
-       style="display:inline-block; margin-top:0.4rem; padding:0.25rem 0.6rem; 
-              border:1px solid #ccc; border-radius:6px; font-size:0.85rem; 
-              color:#333; text-decoration:none;">
-      🔗 LinkedIn
-    </a>
-  </p>
-
-
-
-
-  <!-- Tiny PathFormer -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>Tiny PathFormer</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #playground #fundamentals #weekendproject
+<body>
+  <div class="container">
+    <!-- Personal hero -->
+    <header>
+      <img src="https://github.com/juergenmathes.png?size=240" alt="Portrait of Jürgen Mathes" loading="eager" />
+      <div class="title-wrap">
+        <h1 id="top">Jürgen Mathes</h1>
+        <p class="subtitle">Stuttgart, Germany • English / German / Español</p>
+        <p class="tagline">Turning state-of-the-art AI planning research into <u>deployed systems on real vehicles</u>.</p>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#patents">Patents</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="chips" aria-label="Quick links">
+          <span class="chip"><a href="https://github.com/juergenmathes" target="_blank" rel="noopener">GitHub</a></span>
+          <span class="chip"><a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn</a></span>
+          <span class="chip"><a href="https://scholar.google.com/citations?user=6qs34YkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a></span>
+          <!-- Optional: add your CV pdf to /artifacts and uncomment: -->
+          <!-- <span class="chip"><a href="artifacts/Juergen_Mathes_CV.pdf" target="_blank" rel="noopener">Download CV</a></span> -->
+        </div>
       </div>
+    </header>
+
+    <!-- About me -->
+    <section id="about" class="section-card" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
       <p>
-        Lightweight toy project for learning path planning with an autoregressive policy.
-        Trains on synthetic grid mazes and visualizes trajectories.
+        I’m a Research Engineer focusing on <strong>planning & robotics</strong>, from transformers and
+        world models to diffusion policies and VLM/LLM-driven control. I enjoy building systems that are not only
+        state-of-the-art in papers but <strong>ship in the real world</strong>.
       </p>
-      <a class="btn" href="https://github.com/juergenmathes/tiny-pathformer" target="_blank" rel="noopener">View on GitHub</a>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/tiny-pathformer/raw/main/videos/best_ep40_ok.gif" alt="Tiny PathFormer demo ep40">
-        <figcaption>Autoregressive rollout (ep40)</figcaption>
-      </figure>
-      <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/tiny-pathformer/raw/main/videos/best_ep56_ok.gif" alt="Tiny PathFormer demo ep56">
-        <figcaption>Autoregressive rollout (ep56)</figcaption>
-      </figure>
-    </div>
-  </section>
+    </section>
 
+    <!-- Now / current focus -->
+    <section id="focus" class="section-card" aria-labelledby="focus-title">
+      <h2 id="focus-title">Focus</h2>
+      <ul>
+        <li><strong>World‑model + transformer planners</strong> with tree‑search hybrids.</li>
+        <li><strong>Imitation & RL</strong> training in closed‑loop sim; on‑road validation.</li>
+        <li><strong>Diffusion</strong> experiments for trajectory generation & control.</li>
+        <li>Publishing <strong>notes & demos</strong> on GitHub.</li>
+      </ul>
+    </section>
 
+    <!-- Projects header -->
+    <section id="projects" aria-labelledby="proj-title">
+      <h2 id="proj-title" style="margin-bottom:0.75rem">Projects</h2>
+    </section>
 
-  <!-- LineDiffusion / DiffuTraj -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>LineDiffusion (DiffuTraj)</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #weekendproject #fundamentals
+    <!-- Tiny PathFormer -->
+    <section class="project-split" aria-labelledby="tiny-pathformer-title">
+      <div class="split-left">
+        <h3 id="tiny-pathformer-title">Tiny PathFormer</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#playground #fundamentals #weekendproject</div>
+        <p>Lightweight toy project for learning path planning with an autoregressive policy. Trains on synthetic grid mazes and visualizes trajectories.</p>
+        <a class="btn" href="https://github.com/juergenmathes/tiny-pathformer" target="_blank" rel="noopener">View on GitHub</a>
       </div>
-      <p>
-        Minimal diffusion model for 2D trajectories - from pure noise to straight lines with fixed endpoints.  
-        Demonstrates how denoising diffusion can reconstruct trajectories while preserving constraints.  
-        Includes dark-themed MP4/GIF animations visualizing the reverse diffusion process.
-      </p>
-      <a class="btn" href="https://github.com/juergenmathes/LineDiffusion" target="_blank" rel="noopener">View on GitHub</a>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" alt="LineDiffusion trajectory sample 00">
-        <figcaption>Reverse diffusion (sample 00)</figcaption>
-      </figure>
-      <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" alt="LineDiffusion trajectory sample 01">
-        <figcaption>Reverse diffusion (sample 01)</figcaption>
-      </figure>
-      <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" alt="LineDiffusion trajectory sample 02">
-        <figcaption>Reverse diffusion (sample 02)</figcaption>
-      </figure>
-      <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" alt="LineDiffusion trajectory sample 03">
-        <figcaption>Reverse diffusion (sample 03)</figcaption>
-      </figure>
-    </div>
-  </section>
-
-
-
-  <!-- S3DPPS Project (local artifacts, clickable to full size) -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>S3DPPS (3D Pick and Place)</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #weekendproject
+      <div class="split-right">
+        <figure class="card">
+          <img class="gif-img" src="https://github.com/juergenmathes/tiny-pathformer/raw/main/videos/best_ep40_ok.gif" alt="Tiny PathFormer demo ep40" loading="lazy">
+          <figcaption>Autoregressive rollout (ep40)</figcaption>
+        </figure>
+        <figure class="card">
+          <img class="gif-img" src="https://github.com/juergenmathes/tiny-pathformer/raw/main/videos/best_ep56_ok.gif" alt="Tiny PathFormer demo ep56" loading="lazy">
+          <figcaption>Autoregressive rollout (ep56)</figcaption>
+        </figure>
       </div>
-      <p>
-        A straightforward yet powerful approach to <strong>3D bounding box prediction</strong>.<br>
-        Starting with pre-segmented object point clouds, a two-stage transformer setup
-        <strong>encodes each object</strong> individually and then <strong>cross-attends</strong> across objects
-        to refine their 3D bounding boxes.<br>
-        The result: an efficient pipeline for <strong>multi-object pick-and-place</strong> with
-        headroom for open-world detectors, image fusion, or specialized 3D encoders.
-      </p>
-      <a class="btn" href="https://github.com/juergenmathes/s3dpps" target="_blank" rel="noopener">View on GitHub</a>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <a href="artifacts/s3dpps_architecture.png" target="_blank" rel="noopener">
-          <img class="gif-img same-width" src="artifacts/s3dpps_architecture.png" alt="S3DPPS final architecture diagram" loading="lazy">
-        </a>
-        <figcaption>Architecture overview</figcaption>
-      </figure>
-      <figure class="card">
-        <a href="artifacts/s3dpps_streamlit_orig.gif" target="_blank" rel="noopener">
-          <img class="gif-img same-width" src="artifacts/s3dpps_streamlit_360.gif" alt="S3DPPS interactive 3D point cloud visualization" loading="lazy">
-        </a>
-        <figcaption>3D point cloud visualization (click to enlarge)</figcaption>
-      </figure>
-      <figure class="card">
-        <a href="artifacts/s3dpps_3dpreds_orig.gif" target="_blank" rel="noopener">
-          <img class="gif-img same-width" src="artifacts/s3dpps_3dpreds_360.gif" alt="S3DPPS final 3D bounding box predictions" loading="lazy">
-        </a>
-        <figcaption>Final 3D bounding box predictions (click to enlarge)</figcaption>
-      </figure>
-    </div>
-  </section>
+    </section>
 
-
-   <!-- Video Section: M3DETR (External Presentation) -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>M3DETR: Multi-representation Multi-scale Transformers for 3D Object Detection</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #paper-presentation
+    <!-- LineDiffusion / DiffuTraj -->
+    <section class="project-split" aria-labelledby="linediff-title">
+      <div class="split-left">
+        <h3 id="linediff-title">LineDiffusion (DiffuTraj)</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#weekendproject #fundamentals</div>
+        <p>Minimal diffusion model for 2D trajectories, from pure noise to straight lines with fixed endpoints. Demonstrates how denoising diffusion can reconstruct trajectories while preserving constraints. Includes dark-themed MP4/GIF animations visualizing the reverse diffusion process.</p>
+        <a class="btn" href="https://github.com/juergenmathes/LineDiffusion" target="_blank" rel="noopener">View on GitHub</a>
       </div>
-      <p>
-        Combines raw, voxel, and bird’s-eye-view point cloud representations with multi-scale feature pyramids.  
-        M3DETR unifies multiple representations and scales while modeling relationships between point clouds using transformers.  
-        Achieves state-of-the-art results on KITTI and Waymo benchmarks.  
-        <br><br>
-        <strong>Sources:</strong> 
-        <a href="https://arxiv.org/abs/2104.11896" target="_blank" rel="noopener">[2104.11896]</a>, 
-        <a href="https://arxiv.org/abs/1912.13192" target="_blank" rel="noopener">[1912.13192]</a>
-        <br>
-        <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
-      </p>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <a class="yt-link" href="https://www.youtube.com/watch?v=SQrVUqhrvII" target="_blank" rel="noopener"
-           aria-label="Watch M3DETR presentation on YouTube">
-          <img class="yt-thumb" src="https://img.youtube.com/vi/SQrVUqhrvII/hqdefault.jpg" alt="M3DETR video thumbnail">
-          <span class="yt-play">▶</span>
-        </a>
-        <figcaption>M3DETR video explanation</figcaption>
-      </figure>
-    </div>
-  </section>
-
-
-  <!-- Video Section: Scene Transformer (External Presentation) -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>Scene Transformer: Unified Architecture for Multi-Agent Trajectory Prediction</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #paper-presentation
+      <div class="split-right">
+        <figure class="card">
+          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" alt="LineDiffusion trajectory sample 00" loading="lazy">
+          <figcaption>Reverse diffusion (sample 00)</figcaption>
+        </figure>
+        <figure class="card">
+          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" alt="LineDiffusion trajectory sample 01" loading="lazy">
+          <figcaption>Reverse diffusion (sample 01)</figcaption>
+        </figure>
+        <figure class="card">
+          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" alt="LineDiffusion trajectory sample 02" loading="lazy">
+          <figcaption>Reverse diffusion (sample 02)</figcaption>
+        </figure>
+        <figure class="card">
+          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" alt="LineDiffusion trajectory sample 03" loading="lazy">
+          <figcaption>Reverse diffusion (sample 03)</figcaption>
+        </figure>
       </div>
-      <p>
-        Predicts the motion of all agents jointly, producing consistent futures that account for interactions.  
-        Inspired by language models with masking strategies for flexible conditioning.  
-        Achieves state-of-the-art results on popular autonomous driving datasets.  
-        <br><br>
-        <strong>Source:</strong> 
-        <a href="https://arxiv.org/abs/2106.08417" target="_blank" rel="noopener">[2106.08417]</a>  
-        <br>
-        <strong>Tags:</strong> #machinelearning #transformers #prediction #planning
-      </p>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <a class="yt-link" href="https://www.youtube.com/watch?v=YJKo_F3uUwU" target="_blank" rel="noopener"
-           aria-label="Watch Scene Transformer presentation on YouTube">
-          <img class="yt-thumb" src="https://img.youtube.com/vi/YJKo_F3uUwU/hqdefault.jpg" alt="Scene Transformer video thumbnail">
-          <span class="yt-play">▶</span>
-        </a>
-        <figcaption>Scene Transformer paper explained</figcaption>
-      </figure>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- Video Section: End-to-End Video Object Detection (External Presentation) -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>End-to-End Video Object Detection with Spatial-Temporal Transformers</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #paper-presentation
+    <!-- S3DPPS Project (local artifacts, clickable to full size) -->
+    <section class="project-split" aria-labelledby="s3dpps-title">
+      <div class="split-left">
+        <h3 id="s3dpps-title">S3DPPS (3D Pick and Place)</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#weekendproject</div>
+        <p>
+          A straightforward yet powerful approach to <strong>3D bounding box prediction</strong>.
+          Starting with pre-segmented object point clouds, a two-stage transformer setup <strong>encodes each object</strong>
+          individually and then <strong>cross-attends</strong> across objects to refine their 3D bounding boxes.
+          The result: an efficient pipeline for <strong>multi-object pick-and-place</strong> with headroom for open-world detectors,
+          image fusion, or specialized 3D encoders.
+        </p>
+        <a class="btn" href="https://github.com/juergenmathes/s3dpps" target="_blank" rel="noopener">View on GitHub</a>
       </div>
-      <p>
-        Builds on DETR by introducing Deformable DETR to improve convergence and small-object detection.  
-        Uses spatial-temporal transformers for video object detection.  
-        Achieves higher performance with 10× fewer epochs.  
-        <br><br>
-        <strong>Sources:</strong> 
-        <a href="https://arxiv.org/abs/2105.10920" target="_blank" rel="noopener">[2105.10920]</a>, 
-        <a href="https://arxiv.org/abs/2005.12872" target="_blank" rel="noopener">[2005.12872]</a>, 
-        <a href="https://arxiv.org/abs/2010.04159" target="_blank" rel="noopener">[2010.04159]</a>  
-        <br>
-        <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
-      </p>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <a class="yt-link" href="https://www.youtube.com/watch?v=DaULLeq_AAU" target="_blank" rel="noopener"
-           aria-label="Watch End-to-End Object Detection presentation on YouTube">
-          <img class="yt-thumb" src="https://img.youtube.com/vi/DaULLeq_AAU/hqdefault.jpg" alt="End-to-End Object Detection thumbnail">
-          <span class="yt-play">▶</span>
-        </a>
-        <figcaption>Deformable DETR & Video Object Detection</figcaption>
-      </figure>
-    </div>
-  </section>
-
-
-  <!-- The WayHome Paper (My Publication) -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>The WayHome: Long-term Motion Prediction on Dynamically Scaled Grids</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #my-publication
+      <div class="split-right">
+        <figure class="card">
+          <a href="artifacts/s3dpps_architecture.png" target="_blank" rel="noopener">
+            <img class="gif-img same-width" src="artifacts/s3dpps_architecture.png" alt="S3DPPS final architecture diagram" loading="lazy">
+          </a>
+          <figcaption>Architecture overview</figcaption>
+        </figure>
+        <figure class="card">
+          <a href="artifacts/s3dpps_streamlit_orig.gif" target="_blank" rel="noopener">
+            <img class="gif-img same-width" src="artifacts/s3dpps_streamlit_360.gif" alt="S3DPPS interactive 3D point cloud visualization" loading="lazy">
+          </a>
+          <figcaption>3D point cloud visualization (click to enlarge)</figcaption>
+        </figure>
+        <figure class="card">
+          <a href="artifacts/s3dpps_3dpreds_orig.gif" target="_blank" rel="noopener">
+            <img class="gif-img same-width" src="artifacts/s3dpps_3dpreds_360.gif" alt="S3DPPS final 3D bounding box predictions" loading="lazy">
+          </a>
+          <figcaption>Final 3D bounding box predictions (click to enlarge)</figcaption>
+        </figure>
       </div>
-      <p>
-        We develop a novel motion forecasting approach for autonomous vehicles, predicting multiple heatmaps for every nearby traffic participant, one per timestep.  
-        A sampling algorithm extracts the most likely coordinates, while a new grid-scaling technique further improves accuracy.  
-        Our method reduces miss rates at 3s horizons and remains competitive at longer horizons (up to 8s) on the Waymo Motion Challenge.
-      </p>
-      <a class="btn" href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">Read on arXiv</a>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <img class="gif-img same-width" src="artifacts/2023_wayhome_01.png" alt="WayHome artifact 1">
-        <figcaption>Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.</figcaption>
-      </figure>
-      <figure class="card">
-        <img class="gif-img same-width" src="artifacts/2023_wayhome_02.png" alt="WayHome artifact 2">
-        <figcaption>Fig. 2: Neural network model with encoders, decoders, and grid-scaling technique.</figcaption>
-      </figure>
-    </div>
-  </section>
+    </section>
 
+    <!-- Talks & Paper Explainers -->
+    <section id="talks" aria-labelledby="talks-title">
+      <h2 id="talks-title" style="margin-bottom:0.75rem">Talks & Paper explainers</h2>
+    </section>
 
-  <!-- Scaling Planning Paper (My Publication) -->
-  <section class="project-split">
-    <div class="split-left">
-      <h2>Scaling Planning for Automated Driving using Simplistic Synthetic Data</h2>
-      <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">
-        #my-publication
+    <!-- Video Section: M3DETR (External Presentation) -->
+    <section class="project-split" aria-labelledby="m3detr-title">
+      <div class="split-left">
+        <h3 id="m3detr-title">M3DETR: Multi-representation Multi-scale Transformers for 3D Object Detection</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#paper-presentation</div>
+        <p>
+          Combines raw, voxel, and bird’s-eye-view point cloud representations with multi-scale feature pyramids.
+          M3DETR unifies multiple representations and scales while modeling relationships between point clouds using transformers.
+          Achieves state-of-the-art results on KITTI and Waymo benchmarks.
+          <br><br>
+          <strong>Sources:</strong>
+          <a href="https://arxiv.org/abs/2104.11896" target="_blank" rel="noopener">[2104.11896]</a>,
+          <a href="https://arxiv.org/abs/1912.13192" target="_blank" rel="noopener">[1912.13192]</a>
+          <br>
+          <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
+        </p>
       </div>
+      <div class="split-right">
+        <figure class="card">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=SQrVUqhrvII" target="_blank" rel="noopener" aria-label="Watch M3DETR presentation on YouTube">
+            <img class="yt-thumb" src="https://img.youtube.com/vi/SQrVUqhrvII/hqdefault.jpg" alt="M3DETR video thumbnail" loading="lazy">
+            <span class="yt-play">▶</span>
+          </a>
+          <figcaption>M3DETR video explanation</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Video Section: Scene Transformer (External Presentation) -->
+    <section class="project-split" aria-labelledby="scene-transformer-title">
+      <div class="split-left">
+        <h3 id="scene-transformer-title">Scene Transformer: Unified Architecture for Multi-Agent Trajectory Prediction</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#paper-presentation</div>
+        <p>
+          Predicts the motion of all agents jointly, producing consistent futures that account for interactions.
+          Inspired by language models with masking strategies for flexible conditioning.
+          Achieves state-of-the-art results on popular autonomous driving datasets.
+          <br><br>
+          <strong>Source:</strong>
+          <a href="https://arxiv.org/abs/2106.08417" target="_blank" rel="noopener">[2106.08417]</a>
+          <br>
+          <strong>Tags:</strong> #machinelearning #transformers #prediction #planning
+        </p>
+      </div>
+      <div class="split-right">
+        <figure class="card">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=YJKo_F3uUwU" target="_blank" rel="noopener" aria-label="Watch Scene Transformer presentation on YouTube">
+            <img class="yt-thumb" src="https://img.youtube.com/vi/YJKo_F3uUwU/hqdefault.jpg" alt="Scene Transformer video thumbnail" loading="lazy">
+            <span class="yt-play">▶</span>
+          </a>
+          <figcaption>Scene Transformer paper explained</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Video Section: End-to-End Video Object Detection (External Presentation) -->
+    <section class="project-split" aria-labelledby="e2e-vidod-title">
+      <div class="split-left">
+        <h3 id="e2e-vidod-title">End-to-End Video Object Detection with Spatial-Temporal Transformers</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#paper-presentation</div>
+        <p>
+          Builds on DETR by introducing Deformable DETR to improve convergence and small-object detection.
+          Uses spatial-temporal transformers for video object detection.
+          Achieves higher performance with 10× fewer epochs.
+          <br><br>
+          <strong>Sources:</strong>
+          <a href="https://arxiv.org/abs/2105.10920" target="_blank" rel="noopener">[2105.10920]</a>,
+          <a href="https://arxiv.org/abs/2005.12872" target="_blank" rel="noopener">[2005.12872]</a>,
+          <a href="https://arxiv.org/abs/2010.04159" target="_blank" rel="noopener">[2010.04159]</a>
+          <br>
+          <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
+        </p>
+      </div>
+      <div class="split-right">
+        <figure class="card">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=DaULLeq_AAU" target="_blank" rel="noopener" aria-label="Watch End-to-End Object Detection presentation on YouTube">
+            <img class="yt-thumb" src="https://img.youtube.com/vi/DaULLeq_AAU/hqdefault.jpg" alt="End-to-End Object Detection thumbnail" loading="lazy">
+            <span class="yt-play">▶</span>
+          </a>
+          <figcaption>Deformable DETR & Video Object Detection</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Publications header -->
+    <section id="publications" aria-labelledby="pub-title">
+      <h2 id="pub-title" style="margin-bottom:0.75rem">Publications</h2>
+    </section>
+
+    <!-- The WayHome Paper (My Publication) -->
+    <section class="project-split" aria-labelledby="wayhome-title">
+      <div class="split-left">
+        <h3 id="wayhome-title">The WayHome: Long-term Motion Prediction on Dynamically Scaled Grids</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#my-publication</div>
+        <p>
+          We develop a novel motion forecasting approach for autonomous vehicles, predicting multiple heatmaps for every nearby traffic participant, one per timestep. A sampling algorithm extracts the most likely coordinates, while a new grid-scaling technique further improves accuracy. Our method reduces miss rates at 3s horizons and remains competitive at longer horizons (up to 8s) on the Waymo Motion Challenge.
+        </p>
+        <a class="btn" href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">Read on arXiv</a>
+      </div>
+      <div class="split-right">
+        <figure class="card">
+          <img class="gif-img same-width" src="artifacts/2023_wayhome_01.png" alt="WayHome artifact 1" loading="lazy">
+          <figcaption>Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.</figcaption>
+        </figure>
+        <figure class="card">
+          <img class="gif-img same-width" src="artifacts/2023_wayhome_02.png" alt="WayHome artifact 2" loading="lazy">
+          <figcaption>Fig. 2: Neural network model with encoders, decoders, and grid-scaling technique.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Scaling Planning Paper (My Publication) -->
+    <section class="project-split" aria-labelledby="scaling-title">
+      <div class="split-left">
+        <h3 id="scaling-title">Scaling Planning for Automated Driving using Simplistic Synthetic Data</h3>
+        <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#my-publication</div>
+        <p>
+          We challenge the view that deep learning for driving plans needs massive real-world datasets or highly realistic simulations. With lightweight synthetic roundabout scenarios and behavioural cloning, we achieve reliable and comfortable driving in a real vehicle, while addressing sim-to-real gaps through targeted augmentation and scenario variations.
+        </p>
+        <a class="btn" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">Read on arXiv</a>
+      </div>
+      <div class="split-right">
+        <figure class="card">
+          <img class="gif-img" src="artifacts/2023_scaling_imitation_01.png" alt="Scaling Planning artifact 1" loading="lazy">
+          <figcaption>Fig. 1: Alternating steps of our iterative development cycle: train & optimise planner in sim (left), observe sim-to-real gap on-road and extend simulator (right).</figcaption>
+        </figure>
+        <figure class="card">
+          <img class="gif-img" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2" loading="lazy">
+          <figcaption>Fig. 2: CNN backbone with waypoints head and auxiliary prediction head.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Patents & Links -->
+    <section id="patents" class="section-card" aria-labelledby="patents-title">
+      <h2 id="patents-title">Patents</h2>
+      <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+        <li>💡 <a href="https://patents.google.com/patent/US20250021879A1/en" target="_blank" rel="noopener"><strong>Computer-Implemented Method and System for Training a Planning Model</strong></a> (2025)</li>
+        <li>💡 <a href="https://patents.google.com/patent/US20240278808A1/en" target="_blank" rel="noopener"><strong>Method for Behavior Planning of an Ego Vehicle as Part of a Traffic Scene</strong></a> (2024)</li>
+      </ul>
+
+      <h2 style="margin-top:1.5rem;">Links</h2>
+      <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+        <li>🔗 <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn – professional profile</a></li>
+        <li>🔗 <a href="https://scholar.google.com/citations?user=6qs34YkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar – list of publications</a></li>
+        <li>🔗 <a href="https://github.com/juergenmathes" target="_blank" rel="noopener">GitHub – projects & code</a></li>
+      </ul>
+    </section>
+
+    <!-- Contact / Personal touch -->
+    <section id="contact" class="section-card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
       <p>
-        We challenge the view that deep learning for driving plans needs massive real-world datasets or highly realistic simulations.  
-        With lightweight synthetic roundabout scenarios and behavioural cloning, we achieve reliable and comfortable driving in a real vehicle, while addressing sim-to-real gaps through targeted augmentation and scenario variations.
+        I’m open to collaborating on <strong>planning, world models, diffusion policies, and sim-to-real</strong> topics.
+        For speaking or advising, reach out via <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn</a>.
+        <!-- If you prefer email, add your address: <a href="mailto:you@example.com">you@example.com</a> -->
       </p>
-      <a class="btn" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">Read on arXiv</a>
-    </div>
-    <div class="split-right">
-      <figure class="card">
-        <img class="gif-img" src="artifacts/2023_scaling_imitation_01.png" alt="Scaling Planning artifact 1">
-        <figcaption>
-          Fig. 1: Alternating steps of our iterative development cycle:  
-          train and optimise planner with simplistic simulation (left),  
-          observe sim-to-real gap in on-road test and extend simulator (right).
-        </figcaption>
-      </figure>
-      <figure class="card">
-        <img class="gif-img" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2">
-        <figcaption>
-          Fig. 2: Model architecture consisting of a CNN backbone,  
-          a waypoints head, and a prediction head that generates the  
-          auxiliary prediction output.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
- 
+    </section>
 
-
-
-  <!-- Patents & Links -->
-  <section class="project-split" style="display:block">
-    <h2>Patents</h2>
-    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
-      <li>💡 <a href="https://patents.google.com/patent/US20250021879A1/en" target="_blank" rel="noopener">
-        <strong>Computer-Implemented Method and System for Training a Planning Model</strong></a> (2025)</li>
-      <li>💡 <a href="https://patents.google.com/patent/US20240278808A1/en" target="_blank" rel="noopener">
-        <strong>Method for Behavior Planning of an Ego Vehicle as Part of a Traffic Scene</strong></a> (2024)</li>
-    </ul>
-
-    <h2 style="margin-top:1.5rem;">Links</h2>
-    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
-      <li>🔗 <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">
-        LinkedIn – professional profile</a></li>
-      <li>🔗 <a href="https://scholar.google.com/citations?user=6qs34YkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
-        Google Scholar – list of publications</a></li>
-    </ul>
-  </section>
-
-
+    <footer>
+      <p>© Jürgen Mathes • Last updated: 13 September 2025 • <a href="#top">Back to top</a></p>
+    </footer>
+  </div>
 </body>
 </html>
