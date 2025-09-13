@@ -128,7 +128,7 @@
 
 
 
-  <!-- S3DPPS Project -->
+  <!-- S3DPPS Project (local artifacts, clickable to full size) -->
   <section class="project-split">
     <div class="split-left">
       <h2>S3DPPS (3D Pick and Place)</h2>
@@ -136,31 +136,36 @@
         #weekendproject
       </div>
       <p>
-        A straightforward yet powerful approach to <strong>3D bounding box prediction</strong>.  
-        Starting with pre-segmented object point clouds, our two-stage transformer setup 
-        <strong>encodes each object</strong> individually and then <strong>cross-attends</strong> across objects 
-        to refine their 3D bounding boxes.  
-        The result: an efficient pipeline that excels at <strong>multi-object pick-and-place</strong> tasks - 
-        and leaves ample room for extensions like open-world detectors, image fusion, or specialized 3D encoders.
+        A straightforward yet powerful approach to <strong>3D bounding box prediction</strong>.<br>
+        Starting with pre-segmented object point clouds, a two-stage transformer setup
+        <strong>encodes each object</strong> individually and then <strong>cross-attends</strong> across objects
+        to refine their 3D bounding boxes.<br>
+        The result: an efficient pipeline for <strong>multi-object pick-and-place</strong> with
+        headroom for open-world detectors, image fusion, or specialized 3D encoders.
       </p>
       <a class="btn" href="https://github.com/juergenmathes/s3dpps" target="_blank" rel="noopener">View on GitHub</a>
     </div>
     <div class="split-right">
       <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/s3dpps/blob/main/readme_data/06_final_architecture.png?raw=true" alt="S3DPPS final architecture diagram">
+        <a href="artifacts/s3dpps_architecture.png" target="_blank" rel="noopener">
+          <img class="gif-img same-width" src="artifacts/s3dpps_architecture.png" alt="S3DPPS final architecture diagram" loading="lazy">
+        </a>
         <figcaption>Architecture overview</figcaption>
       </figure>
       <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/s3dpps/blob/main/readme_data/05_streamlit_visu.gif?raw=true" alt="S3DPPS interactive 3D point cloud visualization">
-        <figcaption>3D point cloud visualization</figcaption>
+        <a href="artifacts/s3dpps_streamlit_orig.gif" target="_blank" rel="noopener">
+          <img class="gif-img same-width" src="artifacts/s3dpps_streamlit_360.gif" alt="S3DPPS interactive 3D point cloud visualization" loading="lazy">
+        </a>
+        <figcaption>3D point cloud visualization (click to enlarge)</figcaption>
       </figure>
       <figure class="card">
-        <img class="gif-img" src="https://github.com/juergenmathes/s3dpps/blob/main/readme_data/05_final_training_last_step_best_example_visualization_3d.gif?raw=true" alt="S3DPPS final 3D bounding box predictions">
-        <figcaption>Final 3D bounding box predictions</figcaption>
+        <a href="artifacts/s3dpps_3dpreds_orig.gif" target="_blank" rel="noopener">
+          <img class="gif-img same-width" src="artifacts/s3dpps_3dpreds_360.gif" alt="S3DPPS final 3D bounding box predictions" loading="lazy">
+        </a>
+        <figcaption>Final 3D bounding box predictions (click to enlarge)</figcaption>
       </figure>
     </div>
   </section>
-
 
 
   <!-- Video Section: M3DETR -->
