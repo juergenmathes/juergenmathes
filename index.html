@@ -122,6 +122,8 @@
     .card figcaption a{ color:inherit; text-decoration:none; }
     .card figcaption a:hover{ text-decoration:underline; }
     .gif-img{ width:auto; max-width:100%; max-height:250px; display:inline-block; }
+    .media-grid{ display:grid; gap:1rem; margin-top:1rem; }
+    .media-grid.two-up{ grid-template-columns:1fr 1fr; }
 
     /* Make video thumbs use the full right column width for marked sections only */
     .project-split.media-right-wide .split-right{
@@ -157,6 +159,13 @@
     }
 
     .project-split[aria-labelledby="scaling-title"] .yt-thumb{
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .project-split[aria-labelledby="s3dpps-title"] .yt-thumb{
       height: auto;
       aspect-ratio: auto;
       object-fit: contain;
@@ -286,34 +295,33 @@
       </div>
     </section>
 
-    <!-- S3DPPS Project (local artifacts, clickable to full size) -->
-    <section class="project-split" aria-labelledby="s3dpps-title">
+    <!-- S3DPPS Project (local artifacts) -->
+    <section class="project-split media-right-wide" aria-labelledby="s3dpps-title">
       <div class="split-left">
         <h3 id="s3dpps-title">S3DPPS (3D Pick and Place)</h3>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">May 2025</p>
         <p>
-          Developed S3DPPS, a two-stage transformer pipeline for 3D bounding box prediction from segmented point clouds, improving corner accuracy by ~20% over single-object baselines and enabling real-time (&lt;50 ms) multi-object pick-and-place; integrated MLflow tracking and 3D visualizations for reproducibility, with extensibility to open-world detectors, multimodal fusion, and advanced 3D encoders.
+          Developed S3DPPS, a two-stage transformer pipeline for 3D bounding box prediction from segmented point clouds,
+          improving corner accuracy by ~20% over single-object baselines and enabling real-time (&lt;50 ms) multi-object
+          pick-and-place; integrated MLflow tracking and 3D visualizations for reproducibility, with extensibility to
+          open-world detectors, multimodal fusion, and advanced 3D encoders.
         </p>
         <a class="btn" href="https://github.com/juergenmathes/s3dpps" target="_blank" rel="noopener">View on GitHub</a>
       </div>
+
       <div class="split-right">
-        <figure class="card">
-          <a href="artifacts/s3dpps_architecture.png" target="_blank" rel="noopener">
-            <img class="gif-img same-width" src="artifacts/s3dpps_architecture.png" alt="S3DPPS final architecture diagram" loading="lazy">
-          </a>
-          <figcaption>Architecture overview</figcaption>
-        </figure>
-        <figure class="card">
+        <figure class="card" style="grid-column: 1 / -1; border:0; border-radius:12px; overflow:hidden;">
           <a href="artifacts/s3dpps_streamlit_orig.gif" target="_blank" rel="noopener">
-            <img class="gif-img same-width" src="artifacts/s3dpps_streamlit_360.gif" alt="S3DPPS interactive 3D point cloud visualization" loading="lazy">
+            <img class="yt-thumb" src="artifacts/s3dpps_streamlit_360.gif" alt="S3DPPS interactive 3D point cloud visualization" loading="lazy">
           </a>
-          <figcaption>3D point cloud visualization</figcaption>
+          <figcaption style="text-align:center;">3D point cloud visualization</figcaption>
         </figure>
-        <figure class="card">
+
+        <figure class="card" style="grid-column: 1 / -1;">
           <a href="artifacts/s3dpps_3dpreds_orig.gif" target="_blank" rel="noopener">
-            <img class="gif-img same-width" src="artifacts/s3dpps_3dpreds_360.gif" alt="S3DPPS final 3D bounding box predictions" loading="lazy">
+            <img class="yt-thumb" src="artifacts/s3dpps_3dpreds_360.gif" alt="S3DPPS final 3D bounding box predictions" loading="lazy">
           </a>
-          <figcaption>Final 3D bounding box predictions</figcaption>
+          <figcaption style="text-align:center;">Final 3D bounding box predictions</figcaption>
         </figure>
       </div>
     </section>
@@ -427,7 +435,7 @@
             <img class="yt-thumb" src="artifacts/2023_wayhome_01.png" alt="WayHome predicted heatmaps" loading="lazy">
           </a>
           <figcaption>
-            Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.
+            Predicted heatmaps per timestep for surrounding traffic participants.
           </figcaption>
         </figure>
       </div>
@@ -450,7 +458,7 @@
           <a class="yt-link" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
             <img class="yt-thumb" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2" loading="lazy">
           </a>
-          <figcaption>Fig. 1: CNN backbone with waypoints head and auxiliary prediction head.</figcaption>
+          <figcaption>CNN backbone with waypoints head and auxiliary prediction head.</figcaption>
         </figure>
       </div>
     </section>
@@ -597,9 +605,8 @@
       <h2 id="contact-title" class="section-heading">Contact</h2>
       <div class="section-card">
         <p>
-          I’m open to collaborating on <strong>planning, world models, diffusion policies, and sim-to-real</strong> topics.
-          For speaking or advising, reach out via <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn</a>.
-          <!-- If you prefer email, add your address: <a href="mailto:you@example.com">you@example.com</a> -->
+          I welcome opportunities for collaborative research in the areas of planning, world models, diffusion policies, and sim-to-real.
+          Reach out via <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn</a>.
         </p>
       </div>
     </section>
