@@ -123,6 +123,35 @@
     .card figcaption a:hover{ text-decoration:underline; }
     .gif-img{ width:auto; max-width:100%; max-height:250px; display:inline-block; }
 
+    /* Make video thumbs use the full right column width for marked sections only */
+    .project-split.media-right-wide .split-right{
+      grid-template-columns: 1fr;
+    }
+
+    .project-split.media-right-wide .card{
+      border: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .project-split.media-right-wide .yt-link,
+    .project-split.media-right-wide .yt-thumb{
+      display: block;
+      width: 100%;
+    }
+
+    .project-split.media-right-wide .yt-thumb{
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .project-split.media-right-wide .yt-play{
+      padding: 14px 18px;
+      font-weight: 700;
+    }
+
     .yt-link{ position:relative; display:block; text-decoration:none; color:inherit; }
     .yt-thumb{ display:block; width:100%; height:auto; }
     .yt-play{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
@@ -279,7 +308,7 @@
     </section>
 
     <!-- Video Section: M3DETR (External Presentation) -->
-    <section class="project-split" aria-labelledby="m3detr-title">
+    <section class="project-split media-right-wide" aria-labelledby="m3detr-title">
       <div class="split-left">
         <h3 id="m3detr-title">M3DETR: Multi-representation Multi-scale Transformers for 3D Object Detection</h3>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">December 2022</p>
@@ -301,13 +330,12 @@
             <img class="yt-thumb" src="https://img.youtube.com/vi/SQrVUqhrvII/hqdefault.jpg" alt="M3DETR video thumbnail" loading="lazy">
             <span class="yt-play">▶</span>
           </a>
-          <figcaption>M3DETR video explanation</figcaption>
         </figure>
       </div>
     </section>
 
     <!-- Video Section: Scene Transformer (External Presentation) -->
-    <section class="project-split" aria-labelledby="scene-transformer-title">
+    <section class="project-split media-right-wide" aria-labelledby="scene-transformer-title">
       <div class="split-left">
         <h3 id="scene-transformer-title">Scene Transformer: Unified Architecture for Multi-Agent Trajectory Prediction</h3>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">December 2022</p>
@@ -328,13 +356,12 @@
             <img class="yt-thumb" src="https://img.youtube.com/vi/YJKo_F3uUwU/hqdefault.jpg" alt="Scene Transformer video thumbnail" loading="lazy">
             <span class="yt-play">▶</span>
           </a>
-          <figcaption>Scene Transformer paper explained</figcaption>
         </figure>
       </div>
     </section>
 
     <!-- Video Section: End-to-End Video Object Detection (External Presentation) -->
-    <section class="project-split" aria-labelledby="e2e-vidod-title">
+    <section class="project-split media-right-wide" aria-labelledby="e2e-vidod-title">
       <div class="split-left">
         <h3 id="e2e-vidod-title">End-to-End Video Object Detection with Spatial-Temporal Transformers</h3>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">December 2022</p>
@@ -357,7 +384,6 @@
             <img class="yt-thumb" src="https://img.youtube.com/vi/DaULLeq_AAU/hqdefault.jpg" alt="End-to-End Object Detection thumbnail" loading="lazy">
             <span class="yt-play">▶</span>
           </a>
-          <figcaption>Deformable DETR & Video Object Detection</figcaption>
         </figure>
       </div>
     </section>
@@ -458,10 +484,6 @@
              alt="YouTube video thumbnail – Bosch AI Research project">
         <span class="yt-play">▶</span>
       </a>
-      <figcaption>
-        Bosch AI Research showcase video<br>
-        <em>My work influenced this project.</em>
-      </figcaption>
     </figure>
 
     <figure class="card">
@@ -473,10 +495,6 @@
              alt="LinkedIn post thumbnail – Bosch Research update">
         <span class="yt-play">▶</span>
       </a>
-      <figcaption>
-        Bosch Research update on AI Planning<br>
-        <em>My work influenced this project.</em>
-      </figcaption>
     </figure>
   </div>
 </section>
@@ -506,9 +524,6 @@
              alt="Bosch & Mercedes-Benz automated ride-hailing pilot in San José – press image thumbnail">
         <span class="yt-play">▶</span>
       </a>
-      <figcaption>
-        Press release: San José automated ride-hailing pilot
-      </figcaption>
     </figure>
   </div>
 </section>
@@ -538,9 +553,6 @@
              alt="YouTube video thumbnail – Bosch 3D Perception (LiDAR)">
         <span class="yt-play">▶</span>
       </a>
-      <figcaption>
-        Video: ML Engineer – 3D Perception (LiDAR) work
-      </figcaption>
     </figure>
   </div>
 </section>
