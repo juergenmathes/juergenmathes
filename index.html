@@ -65,6 +65,10 @@
     .chip{ background:var(--chip); border:1px solid var(--border); padding:0.25rem 0.55rem; border-radius:999px; font-size:0.85rem; }
     .chip a{ text-decoration:none; }
 
+    .title-link{ text-decoration:none; color:inherit; }
+    .title-link:hover h3{ text-decoration:underline; }
+    .card a{ display:block; }
+
     section{ margin-top: 2rem; }
     .section-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; }
 
@@ -351,7 +355,9 @@
     <!-- The WayHome Paper (My Publication) -->
     <section class="project-split" aria-labelledby="wayhome-title">
       <div class="split-left">
-        <h3 id="wayhome-title">The WayHome: Long-term Motion Prediction on Dynamically Scaled Grids</h3>
+        <a class="title-link" href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
+          <h3 id="wayhome-title">The WayHome: Long-term Motion Prediction on Dynamically Scaled Grids</h3>
+        </a>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">Oct 2023</p>
         <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#my-publication</div>
         <p>
@@ -361,11 +367,15 @@
       </div>
       <div class="split-right">
         <figure class="card">
-          <img class="gif-img same-width" src="artifacts/2023_wayhome_01.png" alt="WayHome artifact 1" loading="lazy">
+          <a href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
+            <img class="gif-img same-width" src="artifacts/2023_wayhome_01.png" alt="WayHome artifact 1" loading="lazy">
+          </a>
           <figcaption>Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.</figcaption>
         </figure>
         <figure class="card">
-          <img class="gif-img same-width" src="artifacts/2023_wayhome_02.png" alt="WayHome artifact 2" loading="lazy">
+          <a href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
+            <img class="gif-img same-width" src="artifacts/2023_wayhome_02.png" alt="WayHome artifact 2" loading="lazy">
+          </a>
           <figcaption>Fig. 2: Neural network model with encoders, decoders, and grid-scaling technique.</figcaption>
         </figure>
       </div>
@@ -374,7 +384,9 @@
     <!-- Scaling Planning Paper (My Publication) -->
     <section class="project-split" aria-labelledby="scaling-title">
       <div class="split-left">
-        <h3 id="scaling-title">Scaling Planning for Automated Driving using Simplistic Synthetic Data</h3>
+        <a class="title-link" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
+          <h3 id="scaling-title">Scaling Planning for Automated Driving using Simplistic Synthetic Data</h3>
+        </a>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">May 2023</p>
         <div style="font-size:0.8rem; color:#888; margin-top:-0.3rem; margin-bottom:0.8rem;">#my-publication</div>
         <p>
@@ -384,11 +396,15 @@
       </div>
       <div class="split-right">
         <figure class="card">
-          <img class="gif-img" src="artifacts/2023_scaling_imitation_01.png" alt="Scaling Planning artifact 1" loading="lazy">
+          <a href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
+            <img class="gif-img" src="artifacts/2023_scaling_imitation_01.png" alt="Scaling Planning artifact 1" loading="lazy">
+          </a>
           <figcaption>Fig. 1: Alternating steps of our iterative development cycle: train & optimise planner in sim (left), observe sim-to-real gap on-road and extend simulator (right).</figcaption>
         </figure>
         <figure class="card">
-          <img class="gif-img" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2" loading="lazy">
+          <a href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
+            <img class="gif-img" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2" loading="lazy">
+          </a>
           <figcaption>Fig. 2: CNN backbone with waypoints head and auxiliary prediction head.</figcaption>
         </figure>
       </div>
