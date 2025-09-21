@@ -148,6 +148,21 @@
       object-fit: cover;
     }
 
+    /* WayHome: natural dimensions */
+    .project-split[aria-labelledby="wayhome-title"] .yt-thumb{
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .project-split[aria-labelledby="scaling-title"] .yt-thumb{
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: transparent;
+    }
+
     .project-split.media-right-wide .yt-play{
       padding: 14px 18px;
       font-weight: 700;
@@ -395,7 +410,7 @@
     </section>
 
     <!-- The WayHome Paper (My Publication) -->
-    <section class="project-split" aria-labelledby="wayhome-title">
+    <section class="project-split media-right-wide" aria-labelledby="wayhome-title">
       <div class="split-left">
         <a class="title-link" href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
           <h3 id="wayhome-title">The WayHome: Long-term Motion Prediction on Dynamically Scaled Grids</h3>
@@ -408,22 +423,18 @@
       </div>
       <div class="split-right">
         <figure class="card">
-          <a href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
-            <img class="gif-img same-width" src="artifacts/2023_wayhome_01.png" alt="WayHome artifact 1" loading="lazy">
+          <a class="yt-link" href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
+            <img class="yt-thumb" src="artifacts/2023_wayhome_01.png" alt="WayHome predicted heatmaps" loading="lazy">
           </a>
-          <figcaption>Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.</figcaption>
-        </figure>
-        <figure class="card">
-          <a href="https://arxiv.org/abs/2310.04232" target="_blank" rel="noopener">
-            <img class="gif-img same-width" src="artifacts/2023_wayhome_02.png" alt="WayHome artifact 2" loading="lazy">
-          </a>
-          <figcaption>Fig. 2: Neural network model with encoders, decoders, and grid-scaling technique.</figcaption>
+          <figcaption>
+            Fig. 1: Predicted heatmaps per timestep for surrounding traffic participants.
+          </figcaption>
         </figure>
       </div>
     </section>
 
     <!-- Scaling Planning Paper (My Publication) -->
-    <section class="project-split" aria-labelledby="scaling-title">
+    <section class="project-split media-right-wide" aria-labelledby="scaling-title">
       <div class="split-left">
         <a class="title-link" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
           <h3 id="scaling-title">Scaling Planning for Automated Driving using Simplistic Synthetic Data</h3>
@@ -436,16 +447,10 @@
       </div>
       <div class="split-right">
         <figure class="card">
-          <a href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
-            <img class="gif-img" src="artifacts/2023_scaling_imitation_01.png" alt="Scaling Planning artifact 1" loading="lazy">
+          <a class="yt-link" href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
+            <img class="yt-thumb" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2" loading="lazy">
           </a>
-          <figcaption>Fig. 1: Alternating steps of our iterative development cycle: train & optimise planner in sim (left), observe sim-to-real gap on-road and extend simulator (right).</figcaption>
-        </figure>
-        <figure class="card">
-          <a href="https://arxiv.org/abs/2305.18942" target="_blank" rel="noopener">
-            <img class="gif-img" src="artifacts/2023_scaling_imitation_02.png" alt="Scaling Planning artifact 2" loading="lazy">
-          </a>
-          <figcaption>Fig. 2: CNN backbone with waypoints head and auxiliary prediction head.</figcaption>
+          <figcaption>Fig. 1: CNN backbone with waypoints head and auxiliary prediction head.</figcaption>
         </figure>
       </div>
     </section>
@@ -505,7 +510,7 @@
   <div class="split-left">
     <h3 id="bosch-multimodal-title">Senior Machine Learning Engineer – Multi-Modal Perception & Data Labeling</h3>
     <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">
-      Bosch Research • Stuttgart, Germany • Nov 2021 – May 2022
+      Bosch • Stuttgart, Germany • Nov 2021 – May 2022
     </p>
     <ul>
       <li>Developed multi-modal transformer-based encoder–decoder architectures for sensor fusion.</li>
