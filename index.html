@@ -69,10 +69,35 @@
     .title-link:hover h3{ text-decoration:underline; }
     .card a{ display:block; }
 
-    section{ margin-top: 2rem; }
+    section{ margin-top: 1.5rem; }
     .section-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; }
 
     h2{ margin:0 0 0.75rem; font-size:1.25rem; }
+
+    /* Optional section heading variants; toggle by setting the class on <body> */
+    body.heading-style-divider .section-heading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 1.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    body.heading-style-highlight .section-heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.5rem 0 1.25rem;
+      padding: 0.4rem 0.8rem;
+      background: #f9f9f9;
+      border-radius: 6px;
+    }
+    body.heading-style-label .section-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 1.5rem 0 1rem;
+    }
     p  { margin-top: 0; line-height: 1.6; }
     ul { margin: 0.25rem 0 0.75rem 1.2rem; }
 
@@ -111,7 +136,7 @@
     footer{ color:var(--muted); font-size:0.9rem; margin-top:2rem; padding-bottom:2rem; }
   </style>
 </head>
-<body>
+<body class="heading-style-divider">
   <div class="container">
     <!-- Personal hero -->
     <header>
@@ -138,8 +163,8 @@
       </div>
     </header>
 
-  <section id="about" class="section-card" aria-labelledby="about-title">
-    <h2 id="about-title">About</h2>
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title" class="section-heading">About</h2>
     <p>
       I’m a Research Engineer specializing in <strong>AI-based planning and robotics</strong>, building models,
       simulation pipelines, and decision-making systems that translate cutting-edge research into
@@ -154,7 +179,7 @@
 
     <!-- Projects header -->
     <section id="projects" aria-labelledby="proj-title">
-      <h2 id="proj-title" style="margin-bottom:0.75rem">Projects</h2>
+      <h2 id="proj-title" class="section-heading">Projects</h2>
     </section>
 
     <!-- Tiny PathFormer -->
@@ -246,7 +271,7 @@
 
     <!-- Talks & Paper Explainers -->
     <section id="talks" aria-labelledby="talks-title">
-      <h2 id="talks-title" style="margin-bottom:0.75rem">Talks & Paper explainers</h2>
+      <h2 id="talks-title" class="section-heading">Talks & Paper explainers</h2>
     </section>
 
     <!-- Video Section: M3DETR (External Presentation) -->
@@ -338,7 +363,7 @@
 
     <!-- Publications header -->
     <section id="publications" aria-labelledby="pub-title">
-      <h2 id="pub-title" style="margin-bottom:0.75rem">Publications</h2>
+      <h2 id="pub-title" class="section-heading">Publications</h2>
     </section>
 
     <!-- The WayHome Paper (My Publication) -->
@@ -402,7 +427,7 @@
 
     <!-- Experience header -->
 <section id="experience" aria-labelledby="exp-title">
-  <h2 id="exp-title" style="margin-bottom:0.75rem">Experience</h2>
+  <h2 id="exp-title" class="section-heading">Experience</h2>
 </section>
 
 <!-- Bosch Research – Planning & Robotics -->
@@ -539,8 +564,8 @@
 
 
     <!-- Patents & Links -->
-    <section id="patents" class="section-card" aria-labelledby="patents-title">
-      <h2 id="patents-title">Patents</h2>
+    <section id="patents" aria-labelledby="patents-title">
+      <h2 id="patents-title" class="section-heading">Patents</h2>
       <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
         <li>💡 <a href="https://patents.google.com/patent/US20250021879A1/en" target="_blank" rel="noopener"><strong>Computer-Implemented Method and System for Training a Planning Model</strong></a> (2025)</li>
         <li>💡 <a href="https://patents.google.com/patent/US20240278808A1/en" target="_blank" rel="noopener"><strong>Method for Behavior Planning of an Ego Vehicle as Part of a Traffic Scene</strong></a> (2024)</li>
@@ -555,8 +580,8 @@
     </section>
 
     <!-- Contact / Personal touch -->
-    <section id="contact" class="section-card" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-heading">Contact</h2>
       <p>
         I’m open to collaborating on <strong>planning, world models, diffusion policies, and sim-to-real</strong> topics.
         For speaking or advising, reach out via <a href="https://www.linkedin.com/in/juergen-mathes-44b389131/" target="_blank" rel="noopener">LinkedIn</a>.
