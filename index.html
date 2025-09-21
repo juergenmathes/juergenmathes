@@ -119,6 +119,8 @@
     .card img { width: 100%; height: 220px; object-fit: contain; display: block; }
     .same-width { width: 100%; height: auto; object-fit: contain; }
     .card figcaption{ padding:0.5rem 0.75rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
+    .card figcaption a{ color:inherit; text-decoration:none; }
+    .card figcaption a:hover{ text-decoration:underline; }
     .gif-img{ width:auto; max-width:100%; max-height:250px; display:inline-block; }
 
     .yt-link{ position:relative; display:block; text-decoration:none; color:inherit; }
@@ -149,7 +151,7 @@
           <a href="#about">About</a>
           <a href="#projects">Independent Projects</a>
           <a href="#publications">Publications</a>
-          <a href="#talks">Talks & Paper explainers</a>
+          <a href="#talks">AI Papers Explained</a>
           <a href="#patents">Patents</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -208,25 +210,33 @@
       <div class="split-left">
         <h3 id="linediff-title">LineDiffusion (DiffuTraj)</h3>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">June 2025</p>
-        <p>Minimal diffusion model for 2D trajectories, from pure noise to straight lines with fixed endpoints. Demonstrates how denoising diffusion can reconstruct trajectories while preserving constraints. Includes dark-themed MP4/GIF animations visualizing the reverse diffusion process.</p>
+        <p>Developed a minimal denoising diffusion model for constrained 2D trajectories, enforcing fixed endpoints and visualized reverse diffusion with MP4/GIF animations; provided a reproducible baseline that demonstrates how diffusion can reconstruct structured motion under constraints.</p>
         <a class="btn" href="https://github.com/juergenmathes/LineDiffusion" target="_blank" rel="noopener">View on GitHub</a>
       </div>
       <div class="split-right">
         <figure class="card">
-          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" alt="LineDiffusion trajectory sample 00" loading="lazy">
-          <figcaption>Reverse diffusion (sample 00)</figcaption>
+          <a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" target="_blank" rel="noopener">
+            <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" alt="LineDiffusion trajectory sample 00" loading="lazy">
+          </a>
+          <figcaption><a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_00.gif" target="_blank" rel="noopener">Reverse diffusion (sample 00)</a></figcaption>
         </figure>
         <figure class="card">
-          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" alt="LineDiffusion trajectory sample 01" loading="lazy">
-          <figcaption>Reverse diffusion (sample 01)</figcaption>
+          <a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" target="_blank" rel="noopener">
+            <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" alt="LineDiffusion trajectory sample 01" loading="lazy">
+          </a>
+          <figcaption><a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_01.gif" target="_blank" rel="noopener">Reverse diffusion (sample 01)</a></figcaption>
         </figure>
         <figure class="card">
-          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" alt="LineDiffusion trajectory sample 02" loading="lazy">
-          <figcaption>Reverse diffusion (sample 02)</figcaption>
+          <a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" target="_blank" rel="noopener">
+            <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" alt="LineDiffusion trajectory sample 02" loading="lazy">
+          </a>
+          <figcaption><a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_02.gif" target="_blank" rel="noopener">Reverse diffusion (sample 02)</a></figcaption>
         </figure>
         <figure class="card">
-          <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" alt="LineDiffusion trajectory sample 03" loading="lazy">
-          <figcaption>Reverse diffusion (sample 03)</figcaption>
+          <a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" target="_blank" rel="noopener">
+            <img class="gif-img" src="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" alt="LineDiffusion trajectory sample 03" loading="lazy">
+          </a>
+          <figcaption><a href="https://github.com/juergenmathes/LineDiffusion/raw/main/outputs/videos/traj_sample_03.gif" target="_blank" rel="noopener">Reverse diffusion (sample 03)</a></figcaption>
         </figure>
       </div>
     </section>
@@ -237,11 +247,7 @@
         <h3 id="s3dpps-title">S3DPPS (3D Pick and Place)</h3>
         <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">May 2025</p>
         <p>
-          A straightforward yet powerful approach to <strong>3D bounding box prediction</strong>.
-          Starting with pre-segmented object point clouds, a two-stage transformer setup <strong>encodes each object</strong>
-          individually and then <strong>cross-attends</strong> across objects to refine their 3D bounding boxes.
-          The result: an efficient pipeline for <strong>multi-object pick-and-place</strong> with headroom for open-world detectors,
-          image fusion, or specialized 3D encoders.
+          Developed S3DPPS, a two-stage transformer pipeline for 3D bounding box prediction from segmented point clouds, improving corner accuracy by ~20% over single-object baselines and enabling real-time (&lt;50 ms) multi-object pick-and-place; integrated MLflow tracking and 3D visualizations for reproducibility, with extensibility to open-world detectors, multimodal fusion, and advanced 3D encoders.
         </p>
         <a class="btn" href="https://github.com/juergenmathes/s3dpps" target="_blank" rel="noopener">View on GitHub</a>
       </div>
@@ -269,7 +275,7 @@
 
     <!-- Talks & Paper Explainers -->
     <section id="talks" aria-labelledby="talks-title">
-      <h2 id="talks-title" class="section-heading">Talks & Paper explainers</h2>
+      <h2 id="talks-title" class="section-heading">AI Papers Explained</h2>
     </section>
 
     <!-- Video Section: M3DETR (External Presentation) -->
@@ -286,7 +292,7 @@
           <a href="https://arxiv.org/abs/2104.11896" target="_blank" rel="noopener">[2104.11896]</a>,
           <a href="https://arxiv.org/abs/1912.13192" target="_blank" rel="noopener">[1912.13192]</a>
           <br>
-          <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
+          <strong>Tags:</strong> #transformers #objectdetection #pointclouds
         </p>
       </div>
       <div class="split-right">
@@ -313,7 +319,7 @@
           <strong>Source:</strong>
           <a href="https://arxiv.org/abs/2106.08417" target="_blank" rel="noopener">[2106.08417]</a>
           <br>
-          <strong>Tags:</strong> #machinelearning #transformers #prediction #planning
+          <strong>Tags:</strong> #transformers #prediction #planning
         </p>
       </div>
       <div class="split-right">
@@ -342,7 +348,7 @@
           <a href="https://arxiv.org/abs/2005.12872" target="_blank" rel="noopener">[2005.12872]</a>,
           <a href="https://arxiv.org/abs/2010.04159" target="_blank" rel="noopener">[2010.04159]</a>
           <br>
-          <strong>Tags:</strong> #machinelearning #transformers #objectdetection #pointclouds
+          <strong>Tags:</strong> #transformers #objectdetection #pointclouds
         </p>
       </div>
       <div class="split-right">
