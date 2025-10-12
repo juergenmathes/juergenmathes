@@ -150,7 +150,14 @@
       object-fit: cover;
     }
 
-    /* WayHome: natural dimensions */
+    /* Section-specific overrides for natural media dimensions */
+    .project-split[aria-labelledby="flowmatch-title"] .yt-thumb{
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: transparent;
+    }
+
     .project-split[aria-labelledby="wayhome-title"] .yt-thumb{
       height: auto;
       aspect-ratio: auto;
@@ -238,6 +245,51 @@
     <section id="projects" aria-labelledby="proj-title">
       <h2 id="proj-title" class="section-heading">Independent Projects</h2>
     </section>
+
+<!-- Flow Matching Transformer -->
+<section class="project-split media-right-wide" aria-labelledby="flowmatch-title">
+  <div class="split-left">
+    <h3 id="flowmatch-title">Flow Matching Transformer</h3>
+    <p style="font-size:0.9rem; color:#666; margin:0.3rem 0 0.8rem;">October 2025</p>
+    <p>
+      Exploring flow matching for structured 2D trajectories (sine-like), conditioned on start/end, amplitude, and phase.
+      A compact Transformer encoder with Fourier time and positional encodings is trained using the Continuous Flow Matching objective
+      and evaluated with Euler or Heun ODE integration. The project provides a clean and reusable baseline for trajectory and regression tasks,
+      useful to check whether flow matching and the chosen model capacity can effectively capture your data distribution.
+      It borrows several concepts from
+      <a href="https://arxiv.org/abs/2408.11039" target="_blank" rel="noopener">Transfusion</a>
+      and
+      <a href="https://arxiv.org/abs/2410.24164" target="_blank" rel="noopener">𝜋₀</a>.
+    </p>
+    <a class="btn" href="https://github.com/juergenmathes/flow-matching-transformer" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+
+  <div class="split-right">
+    <figure class="card" style="border:0; border-radius:12px; overflow:hidden; text-align:left;">
+      <!-- Click GIF -> open MP4 in new tab -->
+      <a class="yt-link"
+         href="https://raw.githubusercontent.com/juergenmathes/flow-matching-transformer/main/present_epoch_5000.mp4"
+         target="_blank" rel="noopener" aria-label="Open MP4 in new tab">
+        <img class="yt-thumb"
+             src="https://raw.githubusercontent.com/juergenmathes/flow-matching-transformer/main/present_epoch_5000.gif"
+             alt="Flow Matching Transformer denoising preview (epoch 5000)"
+             loading="lazy"
+             style="width:100%; height:auto; object-fit:contain; background:transparent;">
+        <span class="yt-play">▶</span>
+      </a>
+      <figcaption style="text-align:center;">
+        <a href="https://raw.githubusercontent.com/juergenmathes/flow-matching-transformer/main/present_epoch_5000.mp4" target="_blank" rel="noopener">
+          Denoising preview, epoch 5000 (MP4)
+        </a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+
+
+
+
 
     <!-- Equilibrium Matching 2D -->
     <section class="project-split" aria-labelledby="eqm-title">
